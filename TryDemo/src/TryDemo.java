@@ -25,6 +25,7 @@ public class TryDemo {
             return 0;
         } finally {
             System.out.println("=========运算结束=========");
+//     finally的return总是会覆盖try或者catch的return
 //            return -100;
         }
 
