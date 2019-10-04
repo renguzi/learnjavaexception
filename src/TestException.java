@@ -11,7 +11,7 @@ import java.util.Scanner;
 /* 1 try抛出异常，catch用于捕获异常；
    2 try不能单独出现，要么跟catch、要么跟finally；
    3 或者，try、catch、finally同时出现；
-*  4 catch、finally子句不可以配对出现，必须要有try子句；
+*  4 catch、finally子句不可以独立出现，它们的出现必须要有try子句；
    5 try后面，可以跟多个catch子句，通常把捕获异常的父类放到最后，
    用于守住最后一道捕获异常的门槛儿，防止有捕获不到错误的漏网之鱼出现。
 
@@ -19,7 +19,6 @@ import java.util.Scanner;
 public class TestException {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-
         int x= 0;
         int y= 0;
         try {
