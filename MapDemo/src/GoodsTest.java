@@ -14,16 +14,30 @@ public class GoodsTest {
         System.out.println("请输入3条商品信息");
         Scanner scanner = new Scanner(System.in);
         HashMap<String, Goods> stringGoodsHashMap = new HashMap<>();
-        for (int i = 0; i <3 ; i++) {
-            System.out.println("请输入第" + i + "条商品信息：");
+        int i=0;
+        while (i <3 ) {
+            System.out.println("请输入第" + (i+1) + "条商品信息：");
             System.out.println("请输入商品编号：");
             String goodsId=scanner.next();
+            if(stringGoodsHashMap.containsKey(goodsId)){
+                System.out.println("输入的商品编号重复了，请重新输入：");
+                continue;
+            }
             System.out.println("请输入商品名称：");
             String goodsName=scanner.next();
             System.out.println("请输入商品价格：");
-            double goodsPrice=scanner.nextDouble();
+
+            double goodsPrice= 0;
+            try {
+                goodsPrice = scanner.nextDouble();
+            } catch (Exception e) {
+                System.out.println("输入的商品价格格式不对，请输入数字");
+                scanner.next();
+                continue;
+            }
             Goods goods = new Goods(goodsId, goodsName, goodsPrice);
             stringGoodsHashMap.put(goodsId,goods);
+            i++;
         }
 
 //        遍历输出商品信息
