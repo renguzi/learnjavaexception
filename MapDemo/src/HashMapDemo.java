@@ -38,5 +38,23 @@ public class HashMapDemo {
         for (Map.Entry<String,String> entryset:entrySet) {
             System.out.println(entryset.getKey() + " : " + entryset.getValue());
         }
+
+//        通过单词找到注释输出
+        System.out.println("输入要查找的单词：");
+        String word=scanner.next();
+        Iterator<String> iterator1 = stringStringMap.keySet().iterator();
+        while (iterator1.hasNext()){
+            String string=iterator1.next();
+            if (string.equals(word)){
+                System.out.println("找到了"+"key:"+string+" value:"+stringStringMap.get(string));
+                break;
+            }else {
+                if(!(iterator1.hasNext())) {
+                    System.out.println("没找到");
+                }
+                else continue;
+            }
+        }
+
     }
 }
