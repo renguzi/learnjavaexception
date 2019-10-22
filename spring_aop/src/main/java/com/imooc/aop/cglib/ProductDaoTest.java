@@ -1,4 +1,4 @@
-package com.imooc.aop.demo1.cglib;
+package com.imooc.aop.cglib;
 
 import org.junit.Test;
 

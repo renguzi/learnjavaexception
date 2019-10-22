@@ -1,4 +1,4 @@
-package com.imooc.aop.demo1.cglib;
+package com.imooc.aop.cglib;
 
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
